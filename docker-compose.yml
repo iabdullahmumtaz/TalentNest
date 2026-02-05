@@ -1,0 +1,30 @@
+services:
+  mongo:
+    image: mongo:7
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  api:
+    build: ./backend
+    ports:
+      - "6018:6018"
+    environment:
+      PORT: 6018
+      MONGODB_URI: mongodb://mongo:27017/talentnest
+      JWT_SECRET: ${JWT_SECRET:-dev-secret}
+    depends_on:
+      - mongo
+
+  web:
+    build: ./frontend
+    ports:
+      - "5018:5018"
+    environment:
+      VITE_API_URL: http://localhost:6018
+    depends_on:
+      - api
+
+volumes:
+  mongo_data:
