@@ -1,0 +1,58 @@
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --primary: #0f766e;
+  --primary-dark: #0d9488;
+  --accent: #0369a1;
+  --text: #0f172a;
+  --muted: #64748b;
+  --success: #059669;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; }
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.55rem 1.1rem;
+}
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-outline { background: white; border: 1px solid var(--border); color: var(--text); }
+
+input, select, textarea {
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  width: 100%;
+  background: white;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #ecfdf5;
+  color: var(--primary);
+}
+
+.status-applied { background: #eff6ff; color: #2563eb; }
+.status-reviewing { background: #fef3c7; color: #d97706; }
+.status-interview { background: #ede9fe; color: #7c3aed; }
+.status-offered { background: #ecfdf5; color: #059669; }
+.status-rejected { background: #fef2f2; color: #dc2626; }
